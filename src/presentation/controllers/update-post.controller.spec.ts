@@ -64,10 +64,9 @@ describe("UpdatePostController", () => {
 		const options = await authenticate();
 		const created = await createPost(options);
 
-		const { status } = await api.posts[created.id].patch(
-			{ name: faker.lorem.words(3) },
-			options,
-		);
+		const { status } = await api
+			.posts({ "id-or-slug": created.id })
+			.patch({ name: faker.lorem.words(3) }, options);
 
 		expect(status).toBe(200);
 	});
@@ -77,10 +76,9 @@ describe("UpdatePostController", () => {
 		const created = await createPost(options);
 		const newDescription = faker.lorem.sentence();
 
-		const { data } = await api.posts[created.id].patch(
-			{ description: newDescription },
-			options,
-		);
+		const { data } = await api
+			.posts({ "id-or-slug": created.id })
+			.patch({ description: newDescription }, options);
 
 		// biome-ignore lint/suspicious/noExplicitAny: dados retornados pela API
 		expect((data as any)?.description).toBe(newDescription);
@@ -91,10 +89,9 @@ describe("UpdatePostController", () => {
 		const created = await createPost(options);
 		const newDescription = faker.lorem.sentence();
 
-		const { data } = await api.posts[created.id].patch(
-			{ description: newDescription },
-			options,
-		);
+		const { data } = await api
+			.posts({ "id-or-slug": created.id })
+			.patch({ description: newDescription }, options);
 
 		// biome-ignore lint/suspicious/noExplicitAny: dados retornados pela API
 		expect((data as any)?.name).toBe(created.name);
@@ -105,10 +102,9 @@ describe("UpdatePostController", () => {
 		const created = await createPost(options);
 		const newName = faker.lorem.words(3);
 
-		const { data } = await api.posts[created.id].patch(
-			{ name: newName },
-			{ ...options, query: { "update-slug": true } },
-		);
+		const { data } = await api
+			.posts({ "id-or-slug": created.id })
+			.patch({ name: newName }, { ...options, query: { "update-slug": true } });
 
 		// biome-ignore lint/suspicious/noExplicitAny: dados retornados pela API
 		expect((data as any)?.slug).toBe(slugify(newName));
@@ -118,10 +114,9 @@ describe("UpdatePostController", () => {
 		const options = await authenticate();
 		const created = await createPost(options);
 
-		const { data } = await api.posts[created.id].patch(
-			{ name: faker.lorem.words(3) },
-			options,
-		);
+		const { data } = await api
+			.posts({ "id-or-slug": created.id })
+			.patch({ name: faker.lorem.words(3) }, options);
 
 		// biome-ignore lint/suspicious/noExplicitAny: dados retornados pela API
 		expect((data as any)?.slug).toBe(created.slug);
@@ -131,7 +126,7 @@ describe("UpdatePostController", () => {
 		const options = await authenticate();
 		const created = await createPost(options);
 
-		const { status } = await api.posts[created.id].patch({
+		const { status } = await api.posts({ "id-or-slug": created.id }).patch({
 			name: faker.lorem.words(3),
 		});
 
@@ -141,10 +136,9 @@ describe("UpdatePostController", () => {
 	it("should return 404 when the post does not exist", async () => {
 		const options = await authenticate();
 
-		const { status } = await api.posts[generateUUID()].patch(
-			{ name: faker.lorem.words(3) },
-			options,
-		);
+		const { status } = await api
+			.posts({ "id-or-slug": generateUUID() })
+			.patch({ name: faker.lorem.words(3) }, options);
 
 		expect(status).toBe(404);
 	});

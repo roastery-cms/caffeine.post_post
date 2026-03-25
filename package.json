@@ -1,95 +1,95 @@
 {
-    "name": "@roastery-capsules/post.post",
-    "description": "Post management capsule for the Roastery CMS ecosystem — CRUD operations, pagination, caching, and cookie-based JWT authentication",
-    "license": "MIT",
-    "keywords": [
-        "roastery",
-        "cms",
-        "post",
-        "capsule",
-        "clean-architecture",
-        "elysia",
-        "bun",
-        "prisma",
-        "redis",
-        "cache",
-        "rest-api",
-        "crud",
-        "ddd",
-        "cookie-auth",
-        "jwt"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/roastery-cms/capsules.post_post"
-    },
-    "version": "0.0.1",
-    "type": "module",
-    "author": {
-        "name": "Alan Reis",
-        "email": "alanreisanjo@gmail.com",
-        "url": "https://github.com/Hoyasumii"
-    },
-    "main": "./dist/index.cjs",
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "typesVersions": {
-        "*": {
-            "*": [
-                "./dist/*/index.d.ts"
-            ]
-        }
-    },
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.js",
-            "require": "./dist/index.cjs"
-        },
-        "./*": {
-            "types": "./dist/*/index.d.ts",
-            "import": "./dist/*/index.js",
-            "require": "./dist/*/index.cjs"
-        }
-    },
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "build": "knip && biome check --fix && tsup 'src/**/index.ts' --format cjs,esm --dts --tsconfig tsconfig.build.json --clean",
-        "test:unit": "bun test --env-file=.env.testing",
-        "test:coverage": "bun test --env-file=.env.testing --coverage",
-        "start:dev": "bun --watch --env-file=.env ./src/presentation/dev/index.mts",
-        "setup": "bun run build && bun link",
-        "prepare": "husky || true",
-        "knip": "knip"
-    },
-    "devDependencies": {
-        "@commitlint/cli": "^20.4.1",
-        "@commitlint/config-conventional": "^20.4.1",
-        "@faker-js/faker": "^10.2.0",
-        "husky": "^9.1.7",
-        "knip": "^6.0.4"
-    },
-    "peerDependencies": {
-        "typescript": "^5",
-        "@types/bun": "latest",
-        "tsup": "^8.5.1"
-    },
-    "dependencies": {
-        "@elysiajs/eden": "^1.4.8",
-        "@roastery-adapters/cache": "^0.0.4",
-        "@roastery-adapters/post": "^0.0.1",
-        "@roastery-capsules/api-docs": "^0.0.3",
-        "@roastery-capsules/api-error-handler": "^0.0.4",
-        "@roastery-capsules/api-response-mapper": "^0.0.2",
-        "@roastery-capsules/auth": "^0.0.1",
-        "@roastery-capsules/env": "^0.0.4",
-        "@roastery-capsules/post.post-tag": "^0.0.1",
-        "@roastery-capsules/post.post-type": "^0.0.1",
-        "@roastery/barista": "^0.0.5",
-        "@roastery/beans": "^0.0.2",
-        "@roastery/seedbed": "^0.0.2",
-        "@roastery/terroir": "^0.0.9"
-    }
+	"name": "@roastery-capsules/post.post",
+	"description": "Post management capsule for the Roastery CMS ecosystem — CRUD operations, pagination, caching, and cookie-based JWT authentication",
+	"license": "MIT",
+	"keywords": [
+		"roastery",
+		"cms",
+		"post",
+		"capsule",
+		"clean-architecture",
+		"elysia",
+		"bun",
+		"prisma",
+		"redis",
+		"cache",
+		"rest-api",
+		"crud",
+		"ddd",
+		"cookie-auth",
+		"jwt"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/roastery-cms/capsules.post_post"
+	},
+	"version": "0.0.2",
+	"type": "module",
+	"author": {
+		"name": "Alan Reis",
+		"email": "alanreisanjo@gmail.com",
+		"url": "https://github.com/Hoyasumii"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"typesVersions": {
+		"*": {
+			"*": [
+				"./dist/*/index.d.ts"
+			]
+		}
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./*": {
+			"types": "./dist/*/index.d.ts",
+			"import": "./dist/*/index.js",
+			"require": "./dist/*/index.cjs"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "knip && biome check --fix && tsup 'src/**/index.ts' --format cjs,esm --dts --tsconfig tsconfig.build.json --clean",
+		"test:unit": "bun test --env-file=.env.testing",
+		"test:coverage": "bun test --env-file=.env.testing --coverage",
+		"start:dev": "bun --watch --env-file=.env ./src/presentation/dev/index.mts",
+		"setup": "bun run build && bun link",
+		"prepare": "husky || true",
+		"knip": "knip"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^20.4.1",
+		"@commitlint/config-conventional": "^20.4.1",
+		"@faker-js/faker": "^10.2.0",
+		"husky": "^9.1.7",
+		"knip": "^6.0.4"
+	},
+	"peerDependencies": {
+		"typescript": "^5",
+		"@types/bun": "latest",
+		"tsup": "^8.5.1"
+	},
+	"dependencies": {
+		"@elysiajs/eden": "^1.4.8",
+		"@roastery-adapters/cache": "^0.0.4",
+		"@roastery-adapters/post": "^0.0.1",
+		"@roastery-capsules/api-docs": "^0.0.3",
+		"@roastery-capsules/api-error-handler": "^0.0.4",
+		"@roastery-capsules/api-response-mapper": "^0.0.2",
+		"@roastery-capsules/auth": "^0.0.1",
+		"@roastery-capsules/env": "^0.0.4",
+		"@roastery-capsules/post.post-tag": "^0.0.2",
+		"@roastery-capsules/post.post-type": "0.0.2",
+		"@roastery/barista": "^0.0.5",
+		"@roastery/beans": "0.0.3",
+		"@roastery/seedbed": "^0.0.2",
+		"@roastery/terroir": "^0.0.9"
+	}
 }

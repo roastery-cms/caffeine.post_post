@@ -63,7 +63,9 @@ describe("FindPostController", () => {
 	it("should find a post by ID", async () => {
 		const created = await createPost();
 
-		const { status, data } = await api.posts[created.id].get();
+		const { status, data } = await api
+			.posts({ "id-or-slug": created.id })
+			.get();
 
 		expect(status).toBe(200);
 		expect(data?.id).toBe(created.id);
@@ -72,14 +74,16 @@ describe("FindPostController", () => {
 	it("should find a post by slug", async () => {
 		const created = await createPost();
 
-		const { status, data } = await api.posts[created.slug].get();
+		const { status, data } = await api
+			.posts({ "id-or-slug": created.slug })
+			.get();
 
 		expect(status).toBe(200);
 		expect(data?.slug).toBe(created.slug);
 	});
 
 	it("should return 404 for a non-existent post", async () => {
-		const { status } = await api.posts[generateUUID()].get();
+		const { status } = await api.posts({ "id-or-slug": generateUUID() }).get();
 
 		expect(status).toBe(404);
 	});
@@ -87,7 +91,7 @@ describe("FindPostController", () => {
 	it("should not require authentication", async () => {
 		const created = await createPost();
 
-		const { status } = await api.posts[created.id].get();
+		const { status } = await api.posts({ "id-or-slug": created.id }).get();
 
 		expect(status).toBe(200);
 	});
@@ -95,7 +99,7 @@ describe("FindPostController", () => {
 	it("should return the full post payload", async () => {
 		const created = await createPost();
 
-		const { data } = await api.posts[created.id].get();
+		const { data } = await api.posts({ "id-or-slug": created.id }).get();
 
 		expect(data?.id).toBeDefined();
 		expect(data?.slug).toBeDefined();

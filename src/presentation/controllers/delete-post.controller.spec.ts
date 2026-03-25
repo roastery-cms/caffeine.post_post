@@ -63,7 +63,9 @@ describe("DeletePostController", () => {
 		const options = await authenticate();
 		const created = await createPost(options);
 
-		const { status } = await api.posts[created.id].delete({}, options);
+		const { status } = await api
+			.posts({ "id-or-slug": created.id })
+			.delete({}, options);
 
 		expect(status).toBe(204);
 	});
@@ -72,9 +74,9 @@ describe("DeletePostController", () => {
 		const options = await authenticate();
 		const created = await createPost(options);
 
-		await api.posts[created.id].delete({}, options);
+		await api.posts({ "id-or-slug": created.id }).delete({}, options);
 
-		const { status } = await api.posts[created.id].get();
+		const { status } = await api.posts({ "id-or-slug": created.id }).get();
 		expect(status).toBe(404);
 	});
 
@@ -82,7 +84,7 @@ describe("DeletePostController", () => {
 		const options = await authenticate();
 		const created = await createPost(options);
 
-		const { status } = await api.posts[created.id].delete();
+		const { status } = await api.posts({ "id-or-slug": created.id }).delete();
 
 		expect(status).not.toBe(204);
 	});
@@ -90,7 +92,9 @@ describe("DeletePostController", () => {
 	it("should return 404 when the post does not exist", async () => {
 		const options = await authenticate();
 
-		const { status } = await api.posts[generateUUID()].delete({}, options);
+		const { status } = await api
+			.posts({ "id-or-slug": generateUUID() })
+			.delete({}, options);
 
 		expect(status).toBe(404);
 	});

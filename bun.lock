@@ -13,10 +13,10 @@
         "@roastery-capsules/api-response-mapper": "^0.0.2",
         "@roastery-capsules/auth": "^0.0.1",
         "@roastery-capsules/env": "^0.0.4",
-        "@roastery-capsules/post.post-tag": "^0.0.1",
-        "@roastery-capsules/post.post-type": "^0.0.1",
+        "@roastery-capsules/post.post-tag": "^0.0.2",
+        "@roastery-capsules/post.post-type": "0.0.2",
         "@roastery/barista": "^0.0.5",
-        "@roastery/beans": "^0.0.2",
+        "@roastery/beans": "0.0.3",
         "@roastery/seedbed": "^0.0.2",
         "@roastery/terroir": "^0.0.9",
       },
@@ -301,13 +301,13 @@
 
     "@roastery-capsules/env": ["@roastery-capsules/env@0.0.4", "", { "dependencies": { "@roastery/barista": "^0.0.5", "@roastery/terroir": "^0.0.9" }, "peerDependencies": { "@types/bun": "latest", "tsup": "^8.5.1", "typescript": "^5" } }, "sha512-5cW5EDQ5onSbgzb1d9cyRlhGQVSdBrIN+98XoQrO9zegPz9hcArig6+66ue36zxQfCD1G3qtyit4n/aoz+4+xA=="],
 
-    "@roastery-capsules/post.post-tag": ["@roastery-capsules/post.post-tag@0.0.1", "", { "dependencies": { "@roastery-adapters/cache": "^0.0.4", "@roastery-adapters/post": "^0.0.1", "@roastery-capsules/api-docs": "^0.0.3", "@roastery-capsules/api-error-handler": "^0.0.4", "@roastery-capsules/api-response-mapper": "^0.0.2", "@roastery-capsules/auth": "^0.0.1", "@roastery-capsules/env": "^0.0.4", "@roastery/barista": "^0.0.5", "@roastery/beans": "^0.0.2", "@roastery/seedbed": "^0.0.2", "@roastery/terroir": "^0.0.9" }, "peerDependencies": { "@types/bun": "latest", "tsup": "^8.5.1", "typescript": "^5" } }, "sha512-iNgE8O2JYPLI168e/kUhBcKs0SxllR4kkbfuzwddfJ/SuYdS8uWgPVCfqpqgqxaWLM/7/c7eZbyE5KDoHu4Bkw=="],
+    "@roastery-capsules/post.post-tag": ["@roastery-capsules/post.post-tag@0.0.2", "", { "dependencies": { "@roastery-adapters/cache": "^0.0.4", "@roastery-adapters/post": "^0.0.1", "@roastery-capsules/api-docs": "^0.0é.3", "@roastery-capsules/api-error-handler": "^0.0.4", "@roastery-capsules/api-response-mapper": "^0.0.2", "@roastery-capsules/auth": "^0.0.1", "@roastery-capsules/env": "^0.0.4", "@roastery/barista": "^0.0.5", "@roastery/beans": "0.0.3", "@roastery/seedbed": "^0.0.2", "@roastery/terroir": "^0.0.9" }, "peerDependencies": { "@types/bun": "latest", "tsup": "^8.5.1", "typescript": "^5" } }, "sha512-K4ebIxIFOLDoP19RSSQas22QlEpM0wuL0gp5IFToIFMgGhi1adGSDW6abVKlvsr/D0Y4VkRQHodTHVefeMw7tg=="],
 
-    "@roastery-capsules/post.post-type": ["@roastery-capsules/post.post-type@0.0.1", "", { "dependencies": { "@roastery-adapters/cache": "^0.0.4", "@roastery-adapters/post": "^0.0.1", "@roastery-capsules/api-docs": "^0.0.3", "@roastery-capsules/api-error-handler": "^0.0.4", "@roastery-capsules/api-response-mapper": "^0.0.2", "@roastery-capsules/auth": "^0.0.1", "@roastery-capsules/env": "^0.0.4", "@roastery/barista": "^0.0.5", "@roastery/beans": "^0.0.2", "@roastery/seedbed": "^0.0.2", "@roastery/terroir": "^0.0.9" }, "peerDependencies": { "@types/bun": "latest", "tsup": "^8.5.1", "typescript": "^5" } }, "sha512-yWKzZyeWNVBzmh4s0SPsZpCb7WJG7ktezrBT5zNusqO9sQ2pvsScDXwfTmNv+K5GyNybrWM1nzw7ahUAEvOttg=="],
+    "@roastery-capsules/post.post-type": ["@roastery-capsules/post.post-type@0.0.2", "", { "dependencies": { "@roastery-adapters/cache": "^0.0.4", "@roastery-adapters/post": "^0.0.1", "@roastery-capsules/api-docs": "^0.0.3", "@roastery-capsules/api-error-handler": "^0.0.4", "@roastery-capsules/api-response-mapper": "^0.0.2", "@roastery-capsules/auth": "^0.0.1", "@roastery-capsules/env": "^0.0.4", "@roastery/barista": "^0.0.5", "@roastery/beans": "0.0.3", "@roastery/seedbed": "^0.0.2", "@roastery/terroir": "^0.0.9" }, "peerDependencies": { "@types/bun": "latest", "tsup": "^8.5.1", "typescript": "^5" } }, "sha512-gIlxmnJRdcTpAGF0MBhPiS34XwdZDKNHG+HMHCqDehL2w8h86iXvK15gyaKoX5lSallzuFvfd1EXGyhub4pKbQ=="],
 
     "@roastery/barista": ["@roastery/barista@0.0.5", "", { "dependencies": { "elysia": "^1.4.27" }, "peerDependencies": { "@types/bun": "latest", "tsup": "^8.5.1", "typescript": "^5" } }, "sha512-TEwiwDJON8hvvOJ1ksVjZIlMy8jW0TJ/neKzmhshZpeSAHT+VDQ3tjOPASiJErt1IYoUpyAjl7JmtGoTVvgaYw=="],
 
-    "@roastery/beans": ["@roastery/beans@0.0.2", "", { "dependencies": { "slugify": "^1.6.6" }, "peerDependencies": { "@roastery/terroir": "^0.0.7", "@types/bun": "latest", "tsup": "^8.5.1", "typescript": "^5.9.3" } }, "sha512-9W4vD0RHkXkSWm+8HubtGqbqwc1Itzhp98WkJdknMU2SEhthei3l1C9UBfSqxcxO7CJskOU3kDEgqWbh0mwbqA=="],
+    "@roastery/beans": ["@roastery/beans@0.0.3", "", { "dependencies": { "@roastery/terroir": "^0.0.9", "slugify": "^1.6.6" }, "peerDependencies": { "@types/bun": "latest", "tsup": "^8.5.1", "typescript": "^5.9.3" } }, "sha512-CQclaZmLYh57S6AwhgtS2fikiTz1IlaDX9CXQvsP6TX+rJsq1ieKVXl0W98Ptfz3yxOJpcQKpaIXSib9rLd2ZQ=="],
 
     "@roastery/seedbed": ["@roastery/seedbed@0.0.2", "", { "peerDependencies": { "@roastery/beans": "^0.0.2", "@roastery/terroir": "^0.0.7", "@types/bun": "latest", "tsup": "^8.5.1", "typescript": "^5" } }, "sha512-TO31YTQ79wOR6dyhhfSHr+piscqX4op4bnbI+4/OytYBNq8ws9uSmEz9gIpdMr+esmRgQmHNJhWAYdpqLabzZw=="],
 
@@ -858,6 +858,8 @@
     "@prisma/fetch-engine/@prisma/get-platform": ["@prisma/get-platform@7.5.0", "", { "dependencies": { "@prisma/debug": "7.5.0" } }, "sha512-7I+2y1nu/gkEKSiHHbcZ1HPe/euGdEqJZxEEMT0246q4De1+hla0ZzlTgvaT9dHcVCgLSuCG8v39db5qUUWNgw=="],
 
     "@prisma/get-platform/@prisma/debug": ["@prisma/debug@7.2.0", "", {}, "sha512-YSGTiSlBAVJPzX4ONZmMotL+ozJwQjRmZweQNIq/ER0tQJKJynNkRB3kyvt37eOfsbMCXk3gnLF6J9OJ4QWftw=="],
+
+    "@roastery-capsules/auth/@roastery/beans": ["@roastery/beans@0.0.2", "", { "dependencies": { "slugify": "^1.6.6" }, "peerDependencies": { "@roastery/terroir": "^0.0.7", "@types/bun": "latest", "tsup": "^8.5.1", "typescript": "^5.9.3" } }, "sha512-9W4vD0RHkXkSWm+8HubtGqbqwc1Itzhp98WkJdknMU2SEhthei3l1C9UBfSqxcxO7CJskOU3kDEgqWbh0mwbqA=="],
 
     "@types/pg/pg-types": ["pg-types@4.1.0", "", { "dependencies": { "pg-int8": "1.0.1", "pg-numeric": "1.0.2", "postgres-array": "~3.0.1", "postgres-bytea": "~3.0.0", "postgres-date": "~2.1.0", "postgres-interval": "^3.0.0", "postgres-range": "^1.1.1" } }, "sha512-o2XFanIMy/3+mThw69O8d4n1E5zsLhdO+OPqswezu7Z5ekP4hYDqlDjlmOpYMbzY2Br0ufCwJLdDIXeNVwcWFg=="],
 
