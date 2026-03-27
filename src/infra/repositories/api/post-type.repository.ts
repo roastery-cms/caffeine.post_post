@@ -22,6 +22,10 @@ export class PostTypeRepository implements IPostTypeRepository {
 		if (status !== 200) return null;
 
 		const { isHighlighted, name, schema, slug, ...entityProps } = data;
+		entityProps.createdAt = `${(entityProps.createdAt as unknown as Date).toISOString()}`;
+		entityProps.updatedAt = entityProps.updatedAt
+			? `${(entityProps.updatedAt as unknown as Date).toISOString()}`
+			: undefined;
 
 		return PostType.make({ isHighlighted, name, schema, slug }, entityProps);
 	}

@@ -14,7 +14,7 @@ import { barista } from "@roastery/barista";
 
 type PostRoutesArgs = IControllersWithAuth;
 
-export function PostTypeRoutes(data: PostRoutesArgs) {
+export function PostRoutes(data: PostRoutesArgs) {
 	const { postRepository, postTagRepository, postTypeRepository } = data;
 	const controllersWithoutAuth: IControllersWithoutAuth = {
 		postRepository,
@@ -34,4 +34,4 @@ export function PostTypeRoutes(data: PostRoutesArgs) {
 		.use(FindManyPostsController(controllersWithoutAuth));
 }
 
-export type PostTypeRoutes = ReturnType<typeof PostTypeRoutes>;
+export type PostRoutes = ReturnType<typeof PostRoutes>;

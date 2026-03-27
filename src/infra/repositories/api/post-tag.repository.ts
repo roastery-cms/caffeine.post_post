@@ -21,7 +21,11 @@ export class PostTagRepository implements IPostTagRepository {
 		if (error) throw error.value;
 		if (status !== 200) return null;
 
-		const { name, slug, hidden, ...entityProps } = data!;
+		const { name, slug, hidden, ...entityProps } = data;
+		entityProps.createdAt = `${(entityProps.createdAt as unknown as Date).toISOString()}`;
+		entityProps.updatedAt = entityProps.updatedAt
+			? `${(entityProps.updatedAt as unknown as Date).toISOString()}`
+			: undefined;
 
 		return PostTag.make({ name, slug, hidden }, entityProps);
 	}

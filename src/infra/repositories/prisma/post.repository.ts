@@ -139,12 +139,27 @@ export class PostRepository implements IPostRepository {
 
 	@SafePrisma(Post[EntitySource])
 	async update(post: IPost): Promise<void> {
-		const { tags: _tags, ...properties } = post;
+		const {
+			tags: _tags,
+			id,
+			cover,
+			createdAt,
+			description,
+			name,
+			slug,
+			updatedAt,
+		} = post;
 
 		await this.prisma.post.update({
 			where: { id: post.id },
 			data: {
-				...properties,
+				id,
+				cover,
+				createdAt,
+				description,
+				name,
+				slug,
+				updatedAt,
 				tags: { set: _tags.map((tag) => ({ id: tag.id })) },
 			},
 		});
